@@ -345,7 +345,7 @@ def train_transformer(path_to_file_anki, path_to_file_target, config):
         input_tensor, inp_lang = en_tensors, en_lang_tokenizer
         target_tensor, targ_lang = ua_tensors, ua_lang_tokenizer
     else:
-        pass
+        raise ValueError('Translation direction should be "ua-eng" or "eng-ua"')
     
     # Save tokenizers
     with open(config['inp_tokenizer_file'], 'wb') as handle:
